@@ -1,5 +1,6 @@
 package org.nmh.tobyspringboot;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
@@ -24,21 +25,7 @@ public class TobyspringbootApplication {
     }
 
     public static void main(String[] args) {
-        AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext() {
-            @Override
-            protected void onRefresh() {
-                super.onRefresh();
-
-                ServletWebServerFactory serverFactory = this.getBean(ServletWebServerFactory.class);
-                DispatcherServlet dispatcherServlet = this.getBean(DispatcherServlet.class);
-
-                WebServer webServer = serverFactory.getWebServer(servletContext -> servletContext.addServlet("hello", dispatcherServlet)
-                    .addMapping("/*"));
-                webServer.start();
-            }
-        };
-        applicationContext.register(TobyspringbootApplication.class);
-        applicationContext.refresh();
+        SpringApplication.run(TobyspringbootApplication.class, args);
     }
 
 }
