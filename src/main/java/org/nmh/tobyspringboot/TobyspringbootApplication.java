@@ -1,5 +1,6 @@
 package org.nmh.tobyspringboot;
 
+import org.nmh.config.MySpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
 @MySpringBootApplication
