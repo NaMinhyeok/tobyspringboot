@@ -2,4 +2,4 @@ org.nmh.config.autoconfig.TomcatWebServerConfig
 org.nmh.config.autoconfig.JettyWebServerConfig
 org.nmh.config.autoconfig.DispatcherServletConfig
 org.nmh.config.autoconfig.PropertyPlaceholderConfig
-org.nmh.config.autoconfig.ServerPropertiesConfig
+org.nmh.config.autoconfig.PropertyPostProcessorConfig

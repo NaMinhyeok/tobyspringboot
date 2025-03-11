@@ -1,5 +1,8 @@
 package org.nmh.config.autoconfig;
 
+import org.nmh.config.MyConfigurationProperties;
+
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
 
     private String contextPath;
