@@ -17,7 +17,7 @@ public class HelloApiTest {
     void helloApi() {
         TestRestTemplate rest = new TestRestTemplate();
 
-        ResponseEntity<String> res = rest.getForEntity("http://localhost:8080/hello?name={name}", String.class, "Spring");
+        ResponseEntity<String> res = rest.getForEntity("http://localhost:8080/app/hello?name={name}", String.class, "Spring");
 
         then(res.getStatusCode()).isEqualTo(HttpStatus.OK);
         then(res.getHeaders().getFirst(HttpHeaders.CONTENT_TYPE)).startsWith(MediaType.TEXT_PLAIN_VALUE);
@@ -28,7 +28,7 @@ public class HelloApiTest {
     void failsHelloApi() {
         TestRestTemplate rest = new TestRestTemplate();
 
-        ResponseEntity<String> res = rest.getForEntity("http://localhost:8080/hello?name=", String.class);
+        ResponseEntity<String> res = rest.getForEntity("http://localhost:8080/app/hello?name=", String.class);
 
         then(res.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
     }
