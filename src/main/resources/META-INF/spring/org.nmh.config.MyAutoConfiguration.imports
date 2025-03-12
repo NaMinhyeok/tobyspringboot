@@ -3,3 +3,5 @@ org.nmh.config.autoconfig.JettyWebServerConfig
 org.nmh.config.autoconfig.DispatcherServletConfig
 org.nmh.config.autoconfig.PropertyPlaceholderConfig
 org.nmh.config.autoconfig.PropertyPostProcessorConfig
+org.nmh.config.autoconfig.DataSourceConfig
+org.nmh.config.autoconfig.MyDatasourceProperties
