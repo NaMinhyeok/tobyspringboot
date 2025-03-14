@@ -1,7 +1,5 @@
 package org.nmh.tobyspringboot;
 
-import org.assertj.core.api.BDDAssertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.BDDAssertions.*;
@@ -11,7 +9,7 @@ public class HelloServiceTest {
     @Test
     void simpleHelloService() {
         // given
-        SimpleHelloService helloService = new SimpleHelloService();
+        SimpleHelloService helloService = new SimpleHelloService(helloRepositoryStub);
         // when
         String actual = helloService.sayHello("Test");
         // then
@@ -27,4 +25,16 @@ public class HelloServiceTest {
         // then
         then(actual).isEqualTo("*Test*");
     }
+
+    private static final HelloRepository helloRepositoryStub = new HelloRepository() {
+        @Override
+        public Hello findHello(String name) {
+            return null;
+        }
+
+        @Override
+        public void increaseCount(String name) {
+
+        }
+    };
 }
